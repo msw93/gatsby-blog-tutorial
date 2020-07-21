@@ -5,6 +5,19 @@
  */
 
 module.exports = {
-  /* Your site config here */
-  plugins: [],
+  siteMetadata: {
+    title: `Michael's blog`,
+    description: `My awesome blog`,
+  },
+  plugins: [
+    `gatsby-transformer-remark`,
+    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name:`pages`,
+        path:`${__dirname}/src/pages`,
+      },
+    },
+  ],
 }

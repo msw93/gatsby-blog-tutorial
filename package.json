@@ -14,9 +14,18 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "acorn": "^7.3.1",
     "gatsby": "^2.23.12",
+    "gatsby-plugin-sass": "^2.3.12",
+    "gatsby-plugin-sharp": "^2.6.20",
+    "gatsby-source-filesystem": "^2.3.20",
+    "gatsby-transformer-remark": "^2.8.25",
+    "gatsby-transformer-sharp": "^2.5.11",
+    "node-sass": "^4.14.1",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "react-refresh": "^0.8.3",
+    "script": "^0.1.4"
   },
   "devDependencies": {
     "prettier": "2.0.5"
