@@ -1,3 +1,3 @@
-Gatsby Blog'
+<h1>Gatsby Blog</h1>
 
-Made with Gatsby, styled with Sass.
+<p>Made with Gatsby, styled with Sass.</p>
