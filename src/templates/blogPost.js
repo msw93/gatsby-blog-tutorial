@@ -1,27 +1,27 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 
 const Template = ({data, pageContext}) => {
-    console.log(pageContext)
+    //console.log(pageContext.next.frontmatter.path)
     const title = data.markdownRemark.frontmatter.title;
     const html = data.markdownRemark.html;
-
-    //const prev = props.pathContext.prev.frontmatter.path === null ? '#' : props.pathContext.prev.frontmatter.path;
-
-    // if (props.pathContext.prev.frontmatter.path){
-    //     const prev = props.pathContext.prev.frontmatter.path
-    // }
-    // else{
-    //     const prev = '#'
-    // }
+    const { next, prev } = pageContext;
 
     return (
-        <div>
+        <div className='blog'>
             <h1 className="blog-title">{title}</h1>
-            <div className='blog-post' dangerouslySetInnerHTML={{__html:html}}/>
-            <div>
-                <a href={``}>prev</a><a href={``}>next</a>
-            </div>
+            <div className='blog-post' dangerouslySetInnerHTML={{__html:html}}/> 
+            {
+                prev ?
+                <Link to={prev.frontmatter.path}>prev</Link>
+                : <span></span>
+
+            }
+            {
+                next ?
+                <Link to={next.frontmatter.path}>next</Link>
+                :<span></span>
+            }
         </div>
     )
 }

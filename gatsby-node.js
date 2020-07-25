@@ -1,6 +1,11 @@
 
 const path = require('path')
 
+const createTagPages = (createPage, posts) = {
+    const allTagsIndexTemplate = path.resolve('src/templates/allTagsIndex.js');
+    const singleTagIndexTemplate = path.resolve('src/templates/singleTagIndex.js');
+}
+
 exports.createPages = (({graphql, actions}) => {
     const { createPage } = actions;
 
@@ -10,7 +15,7 @@ exports.createPages = (({graphql, actions}) => {
         resolve (
             graphql (
                 `query MyQuery {
-                    allMarkdownRemark (sort: order:ASC, fields: [___date]){
+                    allMarkdownRemark (sort: {order:ASC, fields: [frontmatter___date]}){
                       edges {
                         node {
                           frontmatter {
